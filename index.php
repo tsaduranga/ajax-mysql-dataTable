@@ -55,10 +55,7 @@
                 alert("Enter address ..");
                 return false;
             } 
-            //console.log("name"+full_name);
-            //console.log("email"+email);
-           // console.log("phone"+phone);
-           // console.log("address"+address);
+
             $.ajax({
                 url: "insert.php",
                 method: "POST",
@@ -75,6 +72,25 @@
                 }
             })
         }); 
+
+
+        $(document).on('click', '#delete', function() {
+            var id = $(this).data("id3");
+            if (confirm("Are you sure you want to delete this?")) {
+                $.ajax({
+                    url: "delete.php",
+                    method: "POST",
+                    data: {
+                        id: id
+                    },
+                    dataType: "text",
+                    success: function(data) {
+                        alert(data);
+                        fetch_data();
+                    }
+                });
+            }
+        });
       
  
    
