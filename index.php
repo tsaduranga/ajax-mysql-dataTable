@@ -91,6 +91,56 @@
                 });
             }
         });
+
+
+        $(document).on('click', '#edit', function() {
+
+            var id = $(this).data("id4");
+
+            var full_name = $(this).closest("tr")   // Finds the closest row <tr> 
+                    .find(".full_name")     // Gets a descendent with class="nr"
+                    .text(); 
+
+            var email = $(this).closest("tr")   
+                    .find(".email")     
+                    .text(); 
+
+            var phone = $(this).closest("tr")   
+                    .find(".phone")     
+                    .text(); 
+
+            var address = $(this).closest("tr")   
+                    .find(".address")     
+                    .text(); 
+
+                
+            edit_data(id, full_name, email, phone, address);
+
+         });
+
+
+    function edit_data(id, full_name, email, phone, address) {
+
+
+            $.ajax({
+                url: "edit.php",
+                method: "POST",
+                data: {
+                    id: id,
+                    full_name: full_name,
+                    email: email,
+                    phone: phone,
+                    address: address
+                },
+                dataType: "text",
+                success: function(data) {
+                    alert(data);
+                }
+            }); 
+        }
+           
+
+            
       
  
    
