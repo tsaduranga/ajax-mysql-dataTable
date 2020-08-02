@@ -138,7 +138,20 @@
                 }
             }); 
         }
+
+
+        $(document).on('click', '#new_row', function(){
+
+            var html= '<tr><td><button type="button" id="remove_row" class="btn btn-secondary" > - </button><td></td></td><td id="full_name" contenteditable></td><td id="email" contenteditable></td><td id="address" contenteditable></td><td id="phone" contenteditable></td> <td><button type="button" class="btn btn-primary" name="add" id="add">Add</button></td</tr>';
+            $("table").append(html);
+        });
            
+        
+        $(document).on('click', '#remove_row', function(){
+
+            $(this).closest('tr').remove();
+        });
+
 
             
       

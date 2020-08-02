@@ -7,6 +7,7 @@
         <div align="center"> 
         <table class="table" border="1" bordercolor="#00CCCC"> 
         <tr> 
+        <th width="5%">#</th> 
         <th width="10%">Id</th> 
         <th width="30%">Name</th> 
         <th width="20%">Email</th> 
@@ -21,6 +22,9 @@
     { 
     $output .= ' 
         <tr> 
+        <td>
+        <button type="button" id="new_row" class="btn btn-primary" > +</button>
+        </td>
         <td>'.$row["id"].'</td> 
         <td class="full_name"  data-id1="'.$row["id"].'" contenteditable>'.$row["full_name"].'</td> 
         <td class="email"  data-id2="'.$row["id"].'" contenteditable>'.$row["email"].'</td> 
@@ -31,22 +35,14 @@
         </tr> 
         '; 
         } 
- $output .= ' 
-        <tr> 
-        <td></td> 
-        <td id="full_name" contenteditable></td> 
-        <td id="email" contenteditable></td>
-        <td id="address" contenteditable></td> 
-        <td id="phone" contenteditable></td> 
-        <td><button type="button" class="btn btn-primary" name="add" id="add">Add</button></td> 
-        </tr> 
- '; 
+ ; 
  } 
  else 
  { 
         $output .= '
         <tr> 
         <td><button type="button" class="btn btn-primary" name="add" id="add">Add</button></td> 
+        <td></td>
         <td id="full_name" contenteditable></td> 
         <td id="email" contenteditable></td>
         <td id="address" contenteditable></td> 
