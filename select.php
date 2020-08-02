@@ -44,9 +44,15 @@
  } 
  else 
  { 
-        $output .= '<tr> 
-        <td colspan="4">Data not Found</td> 
-        </tr>'; 
+        $output .= '
+        <tr> 
+        <td><button type="button" class="btn btn-primary" name="add" id="add">Add</button></td> 
+        <td id="full_name" contenteditable></td> 
+        <td id="email" contenteditable></td>
+        <td id="address" contenteditable></td> 
+        <td id="phone" contenteditable></td> 
+        </tr> 
+        '; 
  } 
         $output .= '</table> 
         </div>'; 
