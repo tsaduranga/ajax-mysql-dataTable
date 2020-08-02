@@ -22,10 +22,10 @@
     $output .= ' 
         <tr> 
         <td>'.$row["id"].'</td> 
-        <td class="full_name" id="full_name" data-id1="'.$row["id"].'" contenteditable>'.$row["full_name"].'</td> 
-        <td class="email" id="email" data-id2="'.$row["id"].'" contenteditable>'.$row["email"].'</td> 
-        <td class="address" id="address" data-id3="'.$row["id"].'" contenteditable>'.$row["address"].'</td> 
-        <td class="address" id="phone" data-id4="'.$row["id"].'" contenteditable>'.$row["phone"].'</td> 
+        <td class="full_name"  data-id1="'.$row["id"].'" contenteditable>'.$row["full_name"].'</td> 
+        <td class="email"  data-id2="'.$row["id"].'" contenteditable>'.$row["email"].'</td> 
+        <td class="address"  data-id3="'.$row["id"].'" contenteditable>'.$row["address"].'</td> 
+        <td class="phone"  data-id4="'.$row["id"].'" contenteditable>'.$row["phone"].'</td> 
         <td><button class="btn btn-warning" type="button" name="edit_btn" data-id4="'.$row["id"].'" id="edit">Edit</button></td>  
         <td><button type="button" class="btn btn-danger" name="delete_btn" data-id3="'.$row["id"].'" id="delete">Delete</button></td> 
         </tr> 
@@ -34,8 +34,10 @@
  $output .= ' 
         <tr> 
         <td></td> 
-        <td id="first_name" contenteditable></td> 
-        <td id="last_name" contenteditable></td> 
+        <td id="full_name" contenteditable></td> 
+        <td id="email" contenteditable></td>
+        <td id="address" contenteditable></td> 
+        <td id="phone" contenteditable></td> 
         <td><button type="button" class="btn btn-primary" name="add" id="add">Add</button></td> 
         </tr> 
  '; 

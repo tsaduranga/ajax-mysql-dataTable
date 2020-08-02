@@ -30,6 +30,51 @@
             });
         }
         fetch_data();
+
+
+
+        $(document).on('click', '#add', function() {
+            var full_name = $('#full_name').text();
+            var email = $('#email').text();
+            var phone = $('#phone').text();
+            var address = $('#address').text();
+
+            if (full_name == '') {
+                alert("Enter Full Name");
+                return false;
+            }
+            if (email == '') {
+                alert("Enter email ..");
+                return false;
+            }
+            if (phone == '') {
+                alert("Enter phone ..");
+                return false;
+            }
+            if (address == '') {
+                alert("Enter address ..");
+                return false;
+            } 
+            //console.log("name"+full_name);
+            //console.log("email"+email);
+           // console.log("phone"+phone);
+           // console.log("address"+address);
+            $.ajax({
+                url: "insert.php",
+                method: "POST",
+                data: {
+                    full_name: full_name,
+                    email: email,
+                    phone: phone,
+                    address: address
+                },
+                dataType: "text",
+                success: function(data) {
+                    alert(data);
+                    fetch_data();
+                }
+            })
+        }); 
       
  
    
